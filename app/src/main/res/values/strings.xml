@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">first program</string>
+    <string name="color_selection">Enter color - red, green or blue</string>
+    <string name="type_here">Type here</string>
+    <string name="change_color">Change color</string>
+    <string name="back">Back</string>
+</resources>
