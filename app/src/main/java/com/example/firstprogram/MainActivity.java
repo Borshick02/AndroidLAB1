@@ -5,13 +5,16 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
     private static final int REQUEST_CODE = 1;
     private TextView greetingTextView;
+    private EditText editTextGreeting;
     private Button button;
+    private String greeting;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,13 +22,15 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         greetingTextView = findViewById(R.id.greetingTextView);
+        editTextGreeting = findViewById(R.id.editTextGreeting);
         button = findViewById(R.id.button);
 
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                greeting = editTextGreeting.getText().toString();
                 Intent intent = new Intent(MainActivity.this, SecondActivity.class);
-                intent.putExtra("greeting", "Привет!");
+                intent.putExtra("greeting", greeting);
                 startActivityForResult(intent, REQUEST_CODE);
             }
         });
@@ -36,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
         super.onActivityResult(requestCode, resultCode, data);
         if (requestCode == REQUEST_CODE && resultCode == RESULT_OK) {
             String name = data.getStringExtra("name");
-            String fullGreeting = "Привет, " + name + "!";
+            String fullGreeting = greeting + ", " + name + "!";
             greetingTextView.setText(fullGreeting);
         }
     }

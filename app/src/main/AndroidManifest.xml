@@ -8,7 +8,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.HelloWorld">
 
-        <!-- MainActivity с intent-filter -->
+
         <activity android:name=".MainActivity"
             android:exported="true">
             <intent-filter>

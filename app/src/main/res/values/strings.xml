@@ -1,7 +1,7 @@
 <resources>
-    <string name="app_name">first program</string>
-    <string name="color_selection">Enter color - red, green or blue</string>
-    <string name="type_here">Type here</string>
-    <string name="change_color">Change color</string>
-    <string name="back">Back</string>
+    <string name="app_name">App</string>
+    <string name="enter_greeting">Введите приветствие</string>
+    <string name="enter_name">Введите имя</string>
+    <string name="send_greeting">Дальше</string>
+    <string name="greeting_text">Приветствие появится здесь</string>
 </resources>
