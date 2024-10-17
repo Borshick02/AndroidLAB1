@@ -1,9 +1,9 @@
 <resources>
-    <color name="purple_200">#BB86FC</color>  <!-- Цвет для основного фона -->
-    <color name="purple_700">#6200EE</color>   <!-- Темный цвет -->
+    <color name="purple_200">@color/teal_200</color>  <!-- Цвет для основного фона -->
+    <color name="purple_700">#C44960</color>   <!-- Темный цвет -->
     <color name="black">#000000</color>         <!-- Черный цвет -->
-    <color name="teal_200">#03DAC5</color>      <!-- Цвет акцента -->
-    <color name="colorPrimary">#6200EE</color>  <!-- Цвет основного фона -->
+    <color name="teal_200">#E2BDFA</color>      <!-- Цвет акцента -->
+    <color name="colorPrimary">#A83552</color>  <!-- Цвет основного фона -->
     <color name="colorPrimaryDark">#3700B3</color>  <!-- Темный вариант основного цвета -->
-    <color name="colorAccent">#03DAC5</color>  <!-- Цвет акцента -->
+    <color name="colorAccent">#E1B881</color>  <!-- Цвет акцента -->
 </resources>

@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -28,10 +29,16 @@ public class MainActivity extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                greeting = editTextGreeting.getText().toString();
-                Intent intent = new Intent(MainActivity.this, SecondActivity.class);
-                intent.putExtra("greeting", greeting);
-                startActivityForResult(intent, REQUEST_CODE);
+                greeting = editTextGreeting.getText().toString().trim();
+
+
+                if (greeting.isEmpty()) {
+                    Toast.makeText(MainActivity.this, "Пожалуйста, введите приветствие!", Toast.LENGTH_SHORT).show();
+                } else {
+                    Intent intent = new Intent(MainActivity.this, SecondActivity.class);
+                    intent.putExtra("greeting", greeting);
+                    startActivityForResult(intent, REQUEST_CODE);
+                }
             }
         });
     }
@@ -41,7 +48,7 @@ public class MainActivity extends AppCompatActivity {
         super.onActivityResult(requestCode, resultCode, data);
         if (requestCode == REQUEST_CODE && resultCode == RESULT_OK) {
             String name = data.getStringExtra("name");
-            String fullGreeting = greeting + ", " + name + "!";
+            String fullGreeting = greeting + ", " + name + "!"; // Используем введенное приветствие
             greetingTextView.setText(fullGreeting);
         }
     }
